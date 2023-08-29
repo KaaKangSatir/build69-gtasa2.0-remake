@@ -3,7 +3,10 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := samp
-LOCAL_LDLIBS := -llog
+LOCAL_CPP_EXTENSION := .cpp .cc
+LOCAL_CFLAGS += -O2 -mfloat-abi=softfp -DNDEBUG -std=c++17
+LOCAL_C_INCLUDES += ./include
+LOCAL_LDLIBS += -llog
 
 # samp
 FILE_LIST := $(wildcard $(LOCAL_PATH)/*.cpp)
@@ -27,4 +30,5 @@ FILE_LIST += $(wildcard $(LOCAL_PATH)/vendor/hash/md5.cpp)
 LOCAL_SRC_FILES := $(FILE_LIST:$(LOCAL_PATH)/%=%)
 
 LOCAL_CPPFLAGS := -w -s -fvisibility=default -pthread -Wall -fpack-struct=1 -O2 -std=c++14 -fexceptions
+LOCAL_PATH := $(call my-dir)
 include $(BUILD_SHARED_LIBRARY)
