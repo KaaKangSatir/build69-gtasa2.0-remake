@@ -1,34 +1,10 @@
-#
-# Powered by tapy.me/weikton
-#
-
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
-
-LOCAL_MODULE := samp
-LOCAL_LDLIBS := -llog
-
-# samp
-FILE_LIST := $(wildcard $(LOCAL_PATH)/*.cpp)
-FILE_LIST += $(wildcard $(LOCAL_PATH)/game/*.cpp)
-FILE_LIST += $(wildcard $(LOCAL_PATH)/net/*.cpp)
-FILE_LIST += $(wildcard $(LOCAL_PATH)/util/*.cpp)
-FILE_LIST += $(wildcard $(LOCAL_PATH)/game/RW/RenderWare.cpp)
-FILE_LIST += $(wildcard $(LOCAL_PATH)/gui/*.cpp)
-
-# weikton
-FILE_LIST += $(wildcard $(LOCAL_PATH)/weiktongames/*.cpp)
-
-# vendor
-FILE_LIST += $(wildcard $(LOCAL_PATH)/vendor/inih/cpp/INIReader.cpp)
-FILE_LIST += $(wildcard $(LOCAL_PATH)/vendor/inih/ini.c)
-FILE_LIST += $(wildcard $(LOCAL_PATH)/vendor/RakNet/*.cpp)
-FILE_LIST += $(wildcard $(LOCAL_PATH)/vendor/RakNet/SAMP/*.cpp)
-FILE_LIST += $(wildcard $(LOCAL_PATH)/vendor/imgui/*.cpp)
-FILE_LIST += $(wildcard $(LOCAL_PATH)/vendor/hash/md5.cpp)
-
-LOCAL_SRC_FILES := $(FILE_LIST:$(LOCAL_PATH)/%=%)
-
-LOCAL_CPPFLAGS := -w -s -fvisibility=default -pthread -Wall -fpack-struct=1 -O2 -std=c++14 -fexceptions
+LOCAL_CPP_EXTENSION := .cpp .cc
+LOCAL_MODULE    := GEPENG
+LOCAL_SRC_FILES := main.cpp game.cpp mod/logger.cpp mod/config.cpp
+LOCAL_CFLAGS += -O2 -mfloat-abi=softfp -DNDEBUG -std=c++17
+LOCAL_C_INCLUDES += ./include
+LOCAL_LDLIBS += -llog
 include $(BUILD_SHARED_LIBRARY)
