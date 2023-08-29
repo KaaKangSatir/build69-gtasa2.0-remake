@@ -3,9 +3,6 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := samp
-LOCAL_CPP_EXTENSION := .cpp .cc
-LOCAL_CFLAGS += -O2 -mfloat-abi=softfp -DNDEBUG -std=c++17
-LOCAL_C_INCLUDES += ./include
 LOCAL_LDLIBS += -llog
 
 # samp
