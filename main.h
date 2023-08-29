@@ -37,7 +37,7 @@
 #define RAKSAMP_CLIENT
 #define NETCODE_CONNCOOKIELULZ 0x6969
 #include "vendor/raknet/SAMP/samp_netencr.h"
-#include "vendor/RakNet/SAMP/SAMPRPC.h"
+#include "vendor/rakNet/SAMP/SAMPRPC.h"
 
 #include "util/util.h"
 
