@@ -2,7 +2,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := samp
+LOCAL_MODULE := samp1
 LOCAL_LDLIBS := -llog
 
 # samp
