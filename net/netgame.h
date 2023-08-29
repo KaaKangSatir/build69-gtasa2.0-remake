@@ -5,10 +5,10 @@
 #pragma once
 
 // raknet
-#include "vendor/RakNet/RakClientInterface.h"
-#include "vendor/RakNet/RakNetworkFactory.h"
-#include "vendor/RakNet/PacketEnumerations.h"
-#include "vendor/RakNet/StringCompressor.h"
+#include "vendor/raknetRakClientInterface.h"
+#include "vendor/raknetRakNetworkFactory.h"
+#include "vendor/raknet/PacketEnumerations.h"
+#include "vendor/raknet/StringCompressor.h"
 
 #include "localplayer.h"
 #include "remoteplayer.h"
